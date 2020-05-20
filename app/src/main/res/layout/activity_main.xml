@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_below="@id/linear_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linear_layout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:padding="3dp"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                >
+
+
+                // News and Press Releses
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/image_press"
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="3"
+                        android:layout_columnSpan="1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="@android:color/holo_orange_dark"
+                        android:padding="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/newspaper">
+
+                    </ImageButton>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="News and Press Release"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+
+                </LinearLayout>
+
+                // Patient Registration
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/image_patient_reg"
+
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="3"
+                        android:layout_columnSpan="1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/rounded_button"
+                        android:backgroundTint="#228b22"
+                        android:padding="15dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/file">
+                    </ImageButton>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Patient Registration"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center">
+                    </TextView>
+
+                </LinearLayout>
+
+
+
+                // About Us tab
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:orientation="vertical">
+                    <ImageButton
+                        android:id="@+id/image_about_us"
+                        android:background="@drawable/rounded_button"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_row="0"
+                        android:layout_columnSpan="1"
+                        android:layout_column="3"
+                        android:backgroundTint="@android:color/holo_purple"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/fire"
+                        >
+
+                    </ImageButton>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="About Us"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout3"
+                android:layout_below="@+id/linear_layout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:padding="3dp"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                >
+
+                //  Tenders And Notice
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginStart="10dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/image_notice"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/notice"
+                        android:backgroundTint="@android:color/holo_green_dark">
+                    </ImageButton>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Tenders and Notices"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center">
+                    </TextView>
+
+                </LinearLayout>
+                // Departments Tab
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/image_departments"
+                        android:background="@drawable/rounded_button"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_row="0"
+                        android:layout_columnSpan="1"
+                        android:layout_column="3"
+                        android:backgroundTint="@android:color/holo_red_light"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/file"
+                        >
+
+                    </ImageButton>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Departments"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+                // Recruitment Tab
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/image_recruitment"
+                        android:background="@drawable/rounded_button"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_row="0"
+                        android:layout_columnSpan="1"
+                        android:layout_column="3"
+                        android:backgroundTint="@android:color/holo_orange_light"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/file"
+                        >
+
+                    </ImageButton>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Recruitment"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear_layout4"
+                android:layout_below="@+id/linear_layout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:padding="3dp"
+                android:orientation="horizontal"
+                android:layout_centerHorizontal="true"
+                >
+
+
+                // Related Website Tab
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/image_relatedWebsites"
+                        android:background="@drawable/rounded_button"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_row="0"
+                        android:layout_columnSpan="1"
+                        android:layout_column="3"
+                        android:backgroundTint="@android:color/holo_green_light"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/file"
+                        >
+
+                    </ImageButton>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="Related Websites"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+
+                //Photo Gallery Tab
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical"
+                    >
+                    <ImageButton
+                        android:id="@+id/image_gallery"
+                        android:background="@drawable/rounded_button"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_row="0"
+                        android:layout_columnSpan="1"
+                        android:layout_column="3"
+                        android:backgroundTint="@android:color/holo_blue_dark"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/newspaper"
+                        >
+
+                    </ImageButton>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Photo Gallery"
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+                // Empty Tab
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginLeft="10dp"
+
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/image_empty"
+                        android:background="@drawable/rounded_button"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_row="0"
+                        android:layout_columnSpan="1"
+                        android:layout_column="3"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+
+                        >
+
+                    </ImageButton>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textColor="@android:color/black"
+                        android:textAlignment="center"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/head_Image"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/slider_4"
+        android:orientation="vertical"
+        android:padding="3dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/crc_logo"
+            android:layout_gravity="center_horizontal"
+            android:padding="3dp"
+            android:layout_marginTop="40dp"
+            > </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to CRC Rajnandangaon"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:padding="3dp"> </TextView>
+
+    </LinearLayout>
+
+// Important Notice
+    <LinearLayout
+        android:id="@+id/linear_layout1"
+        android:layout_width="382dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/head_Image"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:text="Important Notice"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            tools:ignore="RtlCompat">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About CRC Rajnandangaon"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"></TextView>
+    </LinearLayout>
+
+//Footer..............................
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:background="@android:color/black"
+        android:layout_alignParentBottom="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Powered by DiSGEN INTERNATIONAL PVT. LTD., Delhi, India"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:textSize="12dp"/>
+
+
+    </LinearLayout>
+</RelativeLayout>
