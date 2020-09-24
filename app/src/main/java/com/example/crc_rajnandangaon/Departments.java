@@ -1,14 +1,20 @@
 package com.example.crc_rajnandangaon;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.icu.util.EthiopicCalendar;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +38,7 @@ public class Departments extends AppCompatActivity {
     JSONObject jsonObject;
     JSONArray jsonArray;
     ListView listView;
-    String TAG= "Bijay Self check in Departments";
+    String TAG= "Bijay Self check in Departments", titleOfActivity="Departments";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +47,7 @@ public class Departments extends AppCompatActivity {
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Departments");
+        setTitle(titleOfActivity);
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setSubtitleTextColor(Color.WHITE);
        // toolbar.setBackgroundColor(Color.parseColor("#FF0000"));
@@ -67,7 +73,7 @@ public class Departments extends AppCompatActivity {
     }
 //*************
 
-    private void displayDepartmentsData() {
+    public void displayDepartmentsData() {
         Departments_Adapter departments_adapter= new Departments_Adapter(this, R.layout.dept_row_layout);
         listView.setAdapter(departments_adapter);
 
@@ -76,27 +82,42 @@ public class Departments extends AppCompatActivity {
             jsonArray= jsonObject.getJSONArray("kitten");
 
             int count=0;
-            String post_title, post_excerpt, post_date;
+            String post_title, post_date;
             while (count<jsonArray.length()){
 
                 JSONObject JO= jsonArray.getJSONObject(count);
                 post_title=JO.getString("post_title");
-                post_date=JO.getString("DATE(post_date)");
-                Departments_Getter_Setter departments_getter_setter =new Departments_Getter_Setter(post_title, post_date);
+                Departments_Getter_Setter departments_getter_setter =new Departments_Getter_Setter(post_title);
                 departments_adapter.add(departments_getter_setter);
                 count++;
 
-                Log.v(TAG,post_title + " "+ post_date);
+                Log.v(TAG,post_title );
+
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        // When Clicked on List Item  ********************************************
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Departments.this, "Loading...", Toast.LENGTH_SHORT).show();
+                String selected = ((TextView) view.findViewById(R.id.dTitle)).getText().toString();
+                titleOfActivity=selected;
+                Intent intent =new Intent(Departments.this, WEB_VIEW_Page.class);
+                intent.putExtra("POST_CONTENT", selected);
+                intent.putExtra("TITLE_OF_ACTIVITY", titleOfActivity);
+                startActivity(intent);
+            }
+        });
+        //**************************************************************************
     }
 
 
     /////////////////Background Tasks Coding////////////////
     public class BackgroundWorker_Departments extends AsyncTask<Void, Void, String> {
-
+        ProgressDialog progressDialog = new ProgressDialog(Departments.this);
         Context context;
         AlertDialog alertDialog;
         BackgroundWorker_Departments(Context ctx){
@@ -107,6 +128,8 @@ public class Departments extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
 
             // json_url="https://crcapp.000webhostapp.com/crc/tender.php";
             json_url="http://disgenonline.in/CRCAPI/depts.php";
@@ -151,11 +174,13 @@ public class Departments extends AppCompatActivity {
 
             json_string=result;
 
-            if (result.isEmpty()){
-                Toast.makeText(context, "NO JSON Data Found....", Toast.LENGTH_SHORT).show();
+            if (result==null){
+                Toast.makeText(context, "NO Data Found.... Check your Internet", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }else
             {
                 displayDepartmentsData();
+                progressDialog.dismiss();
 
             }
 

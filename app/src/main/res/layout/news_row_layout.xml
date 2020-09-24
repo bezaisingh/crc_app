@@ -17,12 +17,12 @@
             android:textSize="15dp"
             />
 
-        <TextView
+        <com.example.crc_rajnandangaon.HindiTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nTitle"
             android:padding="3dp"
-            android:text="News Title"
+            android:text="मिलियन दिव्यंगंज हैं"
             android:textSize="15dp"
             android:layout_toRightOf="@+id/nDate"
           />

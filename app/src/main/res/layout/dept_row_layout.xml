@@ -13,18 +13,6 @@
         android:background="@drawable/rounded_corner"
         android:backgroundTint="@android:color/white"
         >
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/dDate"
-            android:gravity="center_horizontal"
-            android:padding="3dp"
-            android:text="Date"
-            android:textSize="15dp"
-           />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

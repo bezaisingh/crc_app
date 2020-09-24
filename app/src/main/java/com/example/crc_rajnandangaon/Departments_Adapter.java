@@ -46,7 +46,6 @@ public class Departments_Adapter extends ArrayAdapter {
             row=layoutInflater.inflate(R.layout.dept_row_layout, parent, false);
             departmentsHolder= new DepartmentsHolder();
             departmentsHolder.d_title=row.findViewById(R.id.dTitle);
-            departmentsHolder.d_Date=row.findViewById(R.id.dDate);
             row.setTag(departmentsHolder);
         }
         else{
@@ -54,12 +53,11 @@ public class Departments_Adapter extends ArrayAdapter {
         }
         Departments_Getter_Setter departments_getter_setter = (Departments_Getter_Setter) this.getItem(position);
         departmentsHolder.d_title.setText(departments_getter_setter.getPost_title());
-        departmentsHolder.d_Date.setText(departments_getter_setter.getPost_date());
 
         return row;
     }
 
     static class DepartmentsHolder{
-        TextView d_title, d_Date;
+        TextView d_title;
     }
 }

@@ -1,42 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AboutUs">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvAboutUs"
+        android:text="CRC – AN INTRODUCTION"
+        android:layout_below="@+id/toolbar"
+        android:paddingTop="10dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+ <!--
+ <WebView
+       android:layout_below="@id/tvAboutUs"
+       android:id="@+id/webviewAbout_us"
+       android:paddingTop="5dp"
+       android:padding="10dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       />
+-->
+
     <ScrollView
-        android:layout_below="@id/toolbar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAboutUs">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="3dp"
-            android:orientation="vertical">
-            <TextView
+            android:elevation="5dp"
+            app:cardCornerRadius="3dp"
+            >
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CRC – AN INTRODUCTION"
-                android:textStyle="bold"
-                />
+                android:orientation="vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
 
-            <me.biubiubiu.justifytext.library.JustifyTextView
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:text="Chhattisgarh’s disabled population has witnessed a whopping rise of 48% from 2001 to 2011 with the number of disabled going up from 4.19 lakh to 6.24 lakh during the period. These include 2.31 lakh males and 1.88 lakh females The Composite Regional Centre for Skill Development, Rehabilitation and Empowerment of Persons with Disabilities(CRC), Rajnandgaon is an extension of the Swami Vivekananda National Institute for Rehabilitation, Training and Research (SVNIRTAR) Orissa. It was established on 25th June, 2016 to extend services that cater to multiple and diverse disabilities, under one roof. Today, it is fully-equipped and functional to provide rehabilitative and educational services to all types of disabilities. It is located at Old Hospital Campus Rajnandgaon, CRC offers end-to-end solutions for the Divyangjan in Chhattisgarh. Its services that range from the academic to clinical, it continues to be committed to further the cause of the Divyangjan. Persons having different disabilities, served by CRC, include persons with Locomotor Disability, Blindness, Low-vision, Hearing Impairment, Mental Retardation, Mental Illness, Leprosy Cured, Cerebral Palsy, Autism Spectrum Disorder, and Multiply Disabled of all ages. Special emphasis is given to early intervention. A team including Assistant Professor Speech and Audiology, Assistant Clinical Psychology, Assistant Professor Special Education, Lecturer in Occupational Therapy, Lecturer in Physiotherapist, Orientation and Mobility Instructor, Physical Medicine and Rehabilitation Specialist, Prosthetic and Orthotic Engineer, Rehabilitation Officer, Special Educationist, and Vocational Instructor work at the Centre on principles of trans-disciplinary approach. The basic aim of CRC, Rajnadgaon is to create resources and infrastructure required for developing services for persons with disabilities including human resource development and research. The Centre is for facilitating capacity at local levels as well rather than letting it centralize in urban areas. CRC, Rajnandgaon building was equipped with good infrastructure and all assessment and therapeutic material to provide the best services to persons with disabilities. The teams of professionals are providing their services in different areas such as rehabilitation medicine, clinical and rehabilitation, parental training, speech, hearing and communication, special education, training for persons with deaf and blindness, physiotherapy and occupational therapy, early Intervention, prosthetics and orthotics, sensory integration, and community based rehabilitation."/>
+                <TextView
+                    android:id="@+id/tvAboutUsBody1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:padding="5dp"
+                    android:text="Chhattisgarh’s disabled population has witnessed a whopping rise of 48% from 2001 to 2011 with the number of disabled going up from 4.19 lakh to 6.24 lakh during the period. These include 2.31 lakh males and 1.88 lakh females
+The Composite Regional Centre for Skill Development, Rehabilitation and Empowerment of Persons with Disabilities(CRC), Rajnandgaon is an extension of the Swami Vivekananda National Institute for Rehabilitation, Training and Research (SVNIRTAR) Orissa."
+                    />
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tvAboutUsBody2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:padding="5dp"
+android:text="It was established on 25th June, 2016 to extend services that cater to multiple and diverse disabilities, under one roof. Today, it is fully-equipped and functional to provide rehabilitative and educational services to all types of disabilities. It is located at Old Hospital Campus Rajnandgaon, CRC offers end-to-end solutions for the Divyangjan in Chhattisgarh. Its services that range from the academic to clinical, it continues to be committed to further the cause of the Divyangjan. Persons having different disabilities, served by CRC, include persons with Locomotor Disability, Blindness, Low-vision, Hearing Impairment, Mental Retardation, Mental Illness, Leprosy Cured, Cerebral Palsy, Autism Spectrum Disorder, and Multiply Disabled of all ages. Special emphasis is given to early intervention. A team including Assistant Professor Speech and Audiology, Assistant Professor Clinical Psychology, Assistant Professor Special Education, Lecturer in Occupational Therapy, Lecturer in Physiotherapist, Orientation and Mobility Instructor, Physical Medicine and Rehabilitation Specialist, Prosthetic and Orthotic Engineer, Rehabilitation Officer, Special Educationist, and Vocational Instructor work at the Centre on principles of trans-disciplinary approach."
+                    />
 
+                <TextView
+                    android:id="@+id/tvAboutUsBody3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000"
+                    android:padding="5dp"
+android:text="The basic aim of CRC, Rajnadgaon is to create resources and infrastructure required for developing services for persons with disabilities including human resource development and research. The Centre is for facilitating capacity at local levels as well rather than letting it centralize in urban areas. CRC, Rajnandgaon building was equipped with good infrastructure and all assessment and therapeutic material to provide the best services to persons with disabilities. The teams of professionals are providing their services in different areas such as rehabilitation medicine, clinical and rehabilitation, parental training, speech, hearing and communication, special education, training for persons with deaf and blindness, physiotherapy and occupational therapy, early Intervention, prosthetics and orthotics, sensory integration, and community based rehabilitation."
+                    />
+
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
     </ScrollView>
+
+
+
 
 </RelativeLayout>

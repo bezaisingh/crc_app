@@ -1,12 +1,16 @@
 package com.example.crc_rajnandangaon;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +37,7 @@ public class TendersAndNotice extends AppCompatActivity {
     JSONObject jsonObject;
     JSONArray jsonArray;
     ListView listView;
-    String TAG= "Bijay Self check";
+    String TAG= "Bijay Self check",titleOfActivity="Tender & Notices";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,7 @@ public class TendersAndNotice extends AppCompatActivity {
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Tenders And Notice");
+        setTitle(titleOfActivity);
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setSubtitleTextColor(Color.WHITE);
       //  toolbar.setBackgroundColor(Color.parseColor("#00574B"));
@@ -91,10 +95,26 @@ public class TendersAndNotice extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        // When Clicked on List Item  ********************************************
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(TendersAndNotice.this, "Loading...", Toast.LENGTH_SHORT).show();
+                String selected = ((TextView) view.findViewById(R.id.tName)).getText().toString();
+                //  Toast.makeText(NewsAndPressRelease.this, "Position= "+ position+ " Value= " + selected, Toast.LENGTH_SHORT).show();
+                Intent intent =new Intent(TendersAndNotice.this, WEB_VIEW_Page.class);
+                intent.putExtra("POST_CONTENT", selected);
+                intent.putExtra("TITLE_OF_ACTIVITY",titleOfActivity );
+                startActivity(intent);
+            }
+        });
+        //**************************************************************************
     }
 
     /////////////////Background Tasks Coding////////////////
     public class BackgroundTask_Tender extends AsyncTask<Void, Void, String> {
+        ProgressDialog progressDialog = new ProgressDialog(TendersAndNotice.this);
 
         Context context;
         AlertDialog alertDialog;
@@ -106,6 +126,8 @@ public class TendersAndNotice extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
 
             // json_url="https://crcapp.000webhostapp.com/crc/tender.php";
             json_url="http://disgenonline.in/CRCAPI/tender.php";
@@ -150,11 +172,13 @@ public class TendersAndNotice extends AppCompatActivity {
 
             json_string=result;
 
-            if (result.isEmpty()){
-                Toast.makeText(context, "NO JSON Data Found....", Toast.LENGTH_SHORT).show();
+            if (result==null){
+                Toast.makeText(context, "NO Data Found.... Check your Internet", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }else
             {
                 displayTenderData();
+                progressDialog.dismiss();
 
             }
 

@@ -1,6 +1,7 @@
 package com.example.crc_rajnandangaon;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,12 +31,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class NewsAndPressRelease extends AppCompatActivity {
+
+
+
     String json_string="NULL";
     String JSON_STRING;
     JSONObject jsonObject;
     JSONArray jsonArray;
     ListView listView;
-    String TAG= "Bijay Self check";
+    String TAG= "Bijay Self check", titleOfActivity="News and Press Release";
     String post_title, post_date, post_content;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,7 @@ public class NewsAndPressRelease extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("News and Press Release");
+        setTitle(titleOfActivity);
         toolbar.setTitleTextColor(Color.WHITE);
         toolbar.setSubtitleTextColor(Color.WHITE);
       //  toolbar.setBackgroundColor(Color.parseColor("#FF4500"));
@@ -101,10 +104,13 @@ public class NewsAndPressRelease extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(NewsAndPressRelease.this, "Loading...", Toast.LENGTH_SHORT).show();
                 String selected = ((TextView) view.findViewById(R.id.nContent)).getText().toString();
-               //  Toast.makeText(NewsAndPressRelease.this, "Position= "+ position+ " Value= " + selected, Toast.LENGTH_SHORT).show();
-                Intent intent =new Intent(NewsAndPressRelease.this, NewsAndPressReal_2nd.class);
+                Intent intent =new Intent(NewsAndPressRelease.this, WEB_VIEW_Page.class);
                 intent.putExtra("POST_CONTENT", selected);
+                intent.putExtra("TITLE_OF_ACTIVITY",titleOfActivity );
+
                 startActivity(intent);
             }
         });
@@ -112,6 +118,8 @@ public class NewsAndPressRelease extends AppCompatActivity {
 
     /////////////////Background Tasks Coding////////////////
     public class BackgroundWorker_newsAndPress extends AsyncTask<Void, Void, String> {
+
+        ProgressDialog progressDialog = new ProgressDialog(NewsAndPressRelease.this);
 
         Context context;
         AlertDialog alertDialog;
@@ -124,6 +132,8 @@ public class NewsAndPressRelease extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
 
+            progressDialog.setMessage("Loading...");
+            progressDialog.show();
             json_url="http://disgenonline.in/CRCAPI/news_content.php";
 
             alertDialog = new AlertDialog.Builder(context).create();
@@ -166,11 +176,14 @@ public class NewsAndPressRelease extends AppCompatActivity {
 
             json_string=result;
 
-            if (result.isEmpty()){
-                Toast.makeText(context, "NO JSON Data Found....", Toast.LENGTH_SHORT).show();
+            if (result==null){
+                Toast.makeText(context, "NO Data Found.... Check your Internet", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }else
             {
                 displayNewsAndPressData();
+                progressDialog.dismiss();
+
             }
             //////////////////Parse Json//////////////////////
             json_string=result;

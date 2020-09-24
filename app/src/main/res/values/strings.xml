@@ -1,3 +1,74 @@
-<resources>
-    <string name="app_name">CRC_Rajnandangaon</string>
+<resources xmlns:style="http://schemas.android.com/apk/res/android" xmlns:text-align="http://schemas.android.com/apk/res-auto">
+    <string name="app_name">Online CRC Rajnandgaon</string>
+    <string name="no_internet_msg">No Internet Check your Network Connection!!!</string>
+    <string name="connected_internet_msg">Internet Connected</string>
+
+    <string name="about_us">Chhattisgarh’s disabled population has witnessed a whopping rise of 48% from 2001 to 2011 with the number of disabled going up from 4.19 lakh to 6.24 lakh during the period. These include 2.31 lakh males and 1.88 lakh females The Composite Regional Centre for Skill Development, Rehabilitation and Empowerment of Persons with Disabilities(CRC), Rajnandgaon is an extension of the Swami Vivekananda National Institute for Rehabilitation, Training and Research (SVNIRTAR) Orissa. It was established on 25th June, 2016 to extend services that cater to multiple and diverse disabilities, under one roof. Today, it is fully-equipped and functional to provide rehabilitative and educational services to all types of disabilities. It is located at Old Hospital Campus Rajnandgaon, CRC offers end-to-end solutions for the Divyangjan in Chhattisgarh. Its services that range from the academic to clinical, it continues to be committed to further the cause of the Divyangjan. Persons having different disabilities, served by CRC, include persons with Locomotor Disability, Blindness, Low-vision, Hearing Impairment, Mental Retardation, Mental Illness, Leprosy Cured, Cerebral Palsy, Autism Spectrum Disorder, and Multiply Disabled of all ages. Special emphasis is given to early intervention. A team including Assistant Professor Speech and Audiology, Assistant Clinical Psychology, Assistant Professor Special Education, Lecturer in Occupational Therapy, Lecturer in Physiotherapist, Orientation and Mobility Instructor, Physical Medicine and Rehabilitation Specialist, Prosthetic and Orthotic Engineer, Rehabilitation Officer, Special Educationist, and Vocational Instructor work at the Centre on principles of trans-disciplinary approach. The basic aim of CRC, Rajnadgaon is to create resources and infrastructure required for developing services for persons with disabilities including human resource development and research. The Centre is for facilitating capacity at local levels as well rather than letting it centralize in urban areas. CRC, Rajnandgaon building was equipped with good infrastructure and all assessment and therapeutic material to provide the best services to persons with disabilities. The teams of professionals are providing their services in different areas such as rehabilitation medicine, clinical and rehabilitation, parental training, speech, hearing and communication, special education, training for persons with deaf and blindness, physiotherapy and occupational therapy, early Intervention, prosthetics and orthotics, sensory integration, and community based rehabilitation.
+       </string>
+
+
+    <string-array name="genderArray">
+        <item>Select</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="casteArray">
+        <item>Select</item>
+        <item>GEN</item>
+        <item>OBC</item>
+        <item>ST</item>
+        <item>SC</item>
+    </string-array>
+
+    <string-array name="perMonthArray">
+        <item>Select</item>
+        <item>Per Month</item>
+        <item>Per Year</item>
+    </string-array>
+
+    <string-array name="occupationArray">
+        <item>Select</item>
+        <item>Service</item>
+        <item>Business</item>
+        <item>Cultivator</item>
+        <item>Daily Labour</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="incomeArray">
+        <item>Select</item>
+        <item>Income</item>
+        <item>BPL Card Holder</item>
+    </string-array>
+
+    <string-array name="regFeeTypeArray">
+        <item>Select</item>
+        <item>Registration Fee</item>
+        <item>Treatment Fee</item>
+    </string-array>
+
+    <string-array name="refByArray">
+        <item>Select</item>
+        <item>DR.</item>
+        <item>Institute</item>
+        <item>NGO</item>
+        <item>Self</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="refToArray">
+        <item>Select</item>
+        <item>Special Education</item>
+        <item>Prosthetic &amp; Orthotic</item>
+        <item>Occupational Therapy</item>
+        <item>Physiotherapy</item>
+        <item>Clinical Psychology</item>
+        <item>Speech &amp; Hearing</item>
+        <item>Other</item>
+
+    </string-array>
+
+
 </resources>

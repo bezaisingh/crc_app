@@ -11,12 +11,137 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         />
-    <TextView
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Work in Progress"
-        android:layout_centerInParent="true"/>
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tvNationalInst"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="National Institutes"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tvRehabCouncil"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Rehabilitation Council of India"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"/>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tvDoEPD"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="DoEPD(Divyangjan)"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tvSocialJust"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Social Justice"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"
+            />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+           android:id="@+id/tvChiefCommision"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Chief Commissioner (Disabilities)"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tvNationalTrust"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="National Trust"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tvNHFDC"
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="NHFDC"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:padding="5dp"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/tvALIMCO"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="ALIMCO"
+            android:layout_marginTop="2dp"
+            android:backgroundTint="@android:color/white"
+            android:gravity="center"
+            android:textSize="15dp"/>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
